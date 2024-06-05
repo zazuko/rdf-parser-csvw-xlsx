@@ -1,10 +1,12 @@
-const assert = require('assert')
-const fs = require('fs')
-const path = require('path')
-const { describe, it } = require('mocha')
-const XlsxToObjectTransform = require('../lib/XlsxToObjectTransform')
+import assert from 'assert'
+import fs from 'fs'
+import path from 'path'
+import { describe, it } from 'mocha'
+import XlsxToObjectTransform from '../lib/XlsxToObjectTransform.js'
 
-function streamToArray (stream) {
+const __dirname = path.dirname(new URL(import.meta.url).pathname)
+
+function streamToArray(stream) {
   return new Promise((resolve, reject) => {
     const array = []
 
