@@ -1,26 +1,10 @@
 import assert from 'assert'
 import fs from 'fs'
 import path from 'path'
-import { describe, it } from 'mocha'
+import { getStreamAsArray as streamToArray } from 'get-stream'
 import XlsxToObjectTransform from '../lib/XlsxToObjectTransform.js'
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname)
-
-function streamToArray(stream) {
-  return new Promise((resolve, reject) => {
-    const array = []
-
-    stream.on('data', data => {
-      array.push(data)
-    })
-
-    stream.on('end', () => {
-      resolve(array)
-    })
-
-    stream.on('error', reject)
-  })
-}
 
 describe('XlsxToObjectTransform', () => {
   it('should be a constructor', () => {

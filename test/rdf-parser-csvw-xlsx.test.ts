@@ -1,17 +1,13 @@
 import assert from 'assert'
 import fs from 'fs'
 import path from 'path'
-import JsonLdParser from '@rdfjs/parser-jsonld'
-import { describe, it } from 'mocha'
-import rdf from '@zazuko/env'
+import rdf from '@zazuko/env-node'
 import XlsxParser from '../index.js'
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname)
 
-function datasetFromJsonLdFs(filename) {
-  const parser = new JsonLdParser()
-
-  return rdf.dataset().import(parser.import(fs.createReadStream(filename), { factory: rdf }))
+function datasetFromJsonLdFs(filename: string) {
+  return rdf.dataset().import(rdf.fromFile(filename))
 }
 
 describe('rdf-parser-csvw-xlsx', () => {
