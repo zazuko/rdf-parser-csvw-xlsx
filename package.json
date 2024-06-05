@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint . --quiet --ignore-path .gitignore",
     "test": "c8 --reporter=lcov --reporter=text-summary mocha test",
-    "realease": "changeset publish",
+    "release": "changeset publish",
     "prepack": "tsc"
   },
   "files": [
