@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "lint": "eslint . --quiet --ignore-path .gitignore",
-    "test": "c8 --reporter=lcov --reporter=text-summary mocha"
+    "test": "c8 --reporter=lcov --reporter=text-summary mocha",
+    "realease": "changeset publish"
   },
   "repository": {
     "type": "git",
