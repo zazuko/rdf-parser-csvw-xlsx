@@ -1,5 +1,5 @@
 import { Transform } from 'readable-stream'
-import xlsx from 'xlsx'
+import * as xlsx from 'xlsx'
 
 export interface Options {
   sheet?: number | string
