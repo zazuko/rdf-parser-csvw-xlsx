@@ -1,5 +1,11 @@
 # @zazuko/rdf-parser-csvw-xlsx
 
+## 0.2.1
+
+### Patch Changes
+
+- c77ffec: Added typescript types
+
 ## 0.2.0
 
 ### Minor Changes

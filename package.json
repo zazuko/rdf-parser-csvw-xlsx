@@ -1,6 +1,6 @@
 {
   "name": "@zazuko/rdf-parser-csvw-xlsx",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A CSV on the Web based XLSX parser with RDF/JS Stream interface",
   "main": "index.js",
   "type": "module",
@@ -61,7 +61,9 @@
     "typescript": "^5.4.5"
   },
   "mocha": {
-    "extension": ["ts"],
+    "extension": [
+      "ts"
+    ],
     "loader": "ts-node/esm"
   }
 }
