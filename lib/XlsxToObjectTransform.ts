@@ -1,26 +1,31 @@
 import { Transform } from 'readable-stream'
-import xlsx from 'xlsx'
+import * as xlsx from 'xlsx'
+
+export interface Options {
+  sheet?: number | string
+}
 
 export default class XlsxToObjectTransform extends Transform {
-  constructor(options) {
+  private readonly sheet: number | string
+  private readonly buffers: Buffer[]
+
+  constructor(options: Options = {}) {
     super({
       objectMode: true,
     })
-
-    options = options || {}
 
     this.sheet = options.sheet || 0
 
     this.buffers = []
   }
 
-  _transform(data, encoding, done) {
+  _transform(data: Buffer, encoding: unknown, done: () => void) {
     this.buffers.push(data)
 
     done()
   }
 
-  _flush(done) {
+  _flush(done: () => void) {
     const data = Buffer.concat(this.buffers)
     const workbook = xlsx.read(data, { type: 'buffer' })
     const sheetName = typeof this.sheet === 'number' ? workbook.SheetNames[this.sheet] : this.sheet
