@@ -11,6 +11,7 @@
     "prepack": "tsc"
   },
   "files": [
+    "CHANGELOG.md",
     "index.js",
     "index.d.ts",
     "lib/*.js",
