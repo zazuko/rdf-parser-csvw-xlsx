@@ -1,5 +1,11 @@
 # @zazuko/rdf-parser-csvw-xlsx
 
+## 0.3.0
+
+### Minor Changes
+
+- c45465a: Update `@zazuko/rdf-parser-csvw` to `0.17`
+
 ## 0.2.1
 
 ### Patch Changes
